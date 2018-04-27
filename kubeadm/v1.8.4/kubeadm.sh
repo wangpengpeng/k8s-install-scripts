@@ -78,17 +78,19 @@ echo '============================================================'
 # gpgcheck=0
 # EOF
 
+
+# docker 已安装,这段可以注释掉
 # dockerproject docker源
-if [ ! -f "/etc/yum.repos.d/docker.repo" ]; then
-cat >> /etc/yum.repos.d/docker.repo <<EOF
-[docker-repo]
-name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/7
-enabled=1
-gpgcheck=0
-EOF
-fi
-echo "Add docker yum repo success!"
+#if [ ! -f "/etc/yum.repos.d/docker.repo" ]; then
+#cat >> /etc/yum.repos.d/docker.repo <<EOF
+#[docker-repo]
+#name=Docker Repository
+#baseurl=https://yum.dockerproject.org/repo/main/centos/7
+#enabled=1
+#gpgcheck=0
+#EOF
+#fi
+#echo "Add docker yum repo success!"
 
 #echo '============================================================'
 #echo '====================Add kubernetes yum repo...=============='
@@ -105,16 +107,16 @@ echo "Add docker yum repo success!"
 #fi
 
 #echo "Add kubernetes yum repo success!"
-
-echo '============================================================'
-echo '====================Install docker...======================='
-echo '============================================================'
-#查看docker版本
+#
+#echo '============================================================'
+#echo '====================Install docker...======================='
+#echo '============================================================'
+##查看docker版本
 #yum list docker-engine showduplicates
 #安装docker
-yum install -y docker-engine-1.12.6-1.el7.centos.x86_64
+#yum install -y docker-engine-1.12.6-1.el7.centos.x86_64
 
-echo "Install docker success!"
+#echo "Install docker success!"
 
 echo '============================================================'
 echo '====================Config docker...========================'
