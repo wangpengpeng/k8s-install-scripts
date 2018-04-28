@@ -157,7 +157,8 @@ echo "Install kubernetes success!"
 echo '============================================================'
 echo '===================Config kubelet...========================'
 echo '============================================================'
-sed -i 's/cgroup-driver=systemd/cgroup-driver=cgroupfs/g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+#sed -i 's/cgroup-driver=systemd/cgroup-driver=cgroupfs/g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+sed -i 's/cgroup-driver=systemd/cgroup-driver=systemd/g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
 echo "config --pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/szss_k8s/pause-amd64:${KUBE_PAUSE_VERSION}"
 
