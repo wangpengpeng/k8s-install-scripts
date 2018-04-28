@@ -263,6 +263,7 @@ wget -P $HOME/ https://raw.githubusercontent.com/coreos/flannel/${FLANNEL_VERSIO
 sed -i 's/quay.io\/coreos\/flannel/registry.cn-hangzhou.aliyuncs.com\/szss_k8s\/flannel/g' $HOME/kube-flannel.yml
 kubectl --namespace kube-system apply -f $HOME/kube-flannel.yml
 echo "Flannel created!"
+echo "master config success!"
 
 fi
 #=========================master end===================================
@@ -276,6 +277,7 @@ echo '============================================================'
 export KUBE_REPO_PREFIX="registry.cn-hangzhou.aliyuncs.com/szss_k8s"
 export KUBE_ETCD_IMAGE="registry.cn-hangzhou.aliyuncs.com/szss_k8s/etcd-amd64:${ETCD_VERSION}"
 kubeadm join --token ${KUBE_TOKEN} ${MASTER_ADDRESS}:6443 --skip-preflight-checks
+echo "slave config success!"
 echo "Join kubernetes cluster success!"
 fi
 #=========================slave end===================================
